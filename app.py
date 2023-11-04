@@ -5,19 +5,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 
-def index():
-    prediction = None
-
-    if request.method == 'POST':
-        # For demonstration, we're treating the input as a company ticker
-        prediction = predict_company_performance(request.form['company_ticker'].upper())
-
-    return render_template('index.html', prediction=prediction)
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-import yfinance as yf
 
 def get_stock_price_movement(company_ticker):
     try:
@@ -62,3 +49,15 @@ def predict_company_performance(company_ticker):
         performance = "POOR"
 
     return f"Predicted performance for {company_ticker}: {performance}"
+
+def index():
+    prediction = None
+
+    if request.method == 'POST':
+        # For demonstration, we're treating the input as a company ticker
+        prediction = predict_company_performance(request.form['company_ticker'].upper())
+
+    return render_template('index.html', prediction=prediction)
+
+if __name__ == '__main__':
+    app.run(debug=True)
