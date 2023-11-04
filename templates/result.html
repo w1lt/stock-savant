@@ -1,0 +1,35 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stock Price Predictor - Result</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Stock Price Predictor - Result</h1>
+      </div>
+    </header>
+    <main>
+      <h2>12-Month Averages for {{ ticker }}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Average Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for month, average in averages.items() %}
+          <tr>
+            <td>{{ month }}</td>
+            <td>{{ average }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

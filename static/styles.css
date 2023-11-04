@@ -1,11 +1,5 @@
 /** @format */
 
 header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header p {
   text-align: center;
-  margin: 0;
 }
