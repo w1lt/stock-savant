@@ -4,6 +4,7 @@ import yfinance as yf
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
+
 def index():
     prediction = None
 
@@ -13,31 +14,51 @@ def index():
 
     return render_template('index.html', prediction=prediction)
 
-def predict_company_performance(company_name):
-    # Placeholder function for actual prediction logic
-    # In a real application, this would analyze the data and use your ML model
-    return f"Predicted performance for {company_name}: GOOD"
-
 if __name__ == '__main__':
     app.run(debug=True)
 
+import yfinance as yf
+
 def get_stock_price_movement(company_ticker):
-    # Fetch the last hour's data
-    data = yf.download(company_ticker, period="1h", interval="1m")
+    try:
+        data = yf.download(company_ticker, period="1d", interval="1m")
+        percentage_change = ((data['Close'][-1] - data['Open'][0]) / data['Open'][0]) * 100
+    except:
+        percentage_change = 0
 
-    # Check if the stock price increased in the last hour
-    if data['Close'][-1] > data['Open'][0]:
-        return 1  # Positive movement
+    return percentage_change
+
+def get_pe_ratio(company_ticker):
+    try:
+        ticker_data = yf.Ticker(company_ticker)
+        pe_ratio = ticker_data.info["trailingPE"]
+    except:
+        pe_ratio = None
+    
+    return pe_ratio
+
+def predict_company_performance(company_ticker):
+    stock_movement = get_stock_price_movement(company_ticker)
+    pe_ratio = get_pe_ratio(company_ticker)
+
+    if pe_ratio is None:
+        return f"Couldn't fetch data for {company_ticker}. Please try again."
+
+    score = 0
+    if pe_ratio < 15:
+        score += 1
+    elif pe_ratio < 25:
+        score += 0.5
+
+    score += 0.3 * (stock_movement / 10)
+
+    if score > 1.2:
+        performance = "EXCELLENT"
+    elif score > 0.8:
+        performance = "GOOD"
+    elif score > 0.4:
+        performance = "AVERAGE"
     else:
-        return -1  # Negative movement
+        performance = "POOR"
 
-def predict_company_performance(company_name):
-    # ... (rest of the code to get financial, news, and social media data)
-
-    # Get stock price movement
-    stock_movement = get_stock_price_movement(company_name)
-
-    # Update the score to include stock movement
-    score += 0.2 * stock_movement
-
-    # ... (rest of the score interpretation logic)
+    return f"Predicted performance for {company_ticker}: {performance}"
