@@ -1,7 +1,6 @@
 import yfinance as yf
 import pandas as pd
 
-# Replace 'AAPL' with the stock symbol of the company you are interested in
 ticker_symbol = str(input("Enter the ticker symbol of the company you are interested in: "))
 
 # Define the date range for the past 12 months
