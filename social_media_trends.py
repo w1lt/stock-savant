@@ -14,7 +14,6 @@ reddit = praw.Reddit(
     user_agent='python:StockSavant:v1.0 (by /u/Aggravating-Gas-5659)'
 )
 
-company_name = "AAPL"
 subreddit_name = "StockMarket"
 
 def fetch_reddit_data(company_name, subreddit_name):
@@ -24,14 +23,19 @@ def fetch_reddit_data(company_name, subreddit_name):
         posts.append(submission.title + ' ' + submission.selftext)
     return posts
 
-reddit_posts = fetch_reddit_data(company_name, subreddit_name)
+def analyze_social_media_data(company_name):
+    reddit_posts = fetch_reddit_data(company_name, subreddit_name)
+    
+    # Perform sentiment analysis on a subset of 10 Reddit posts using BERT
+    sentiments = []
+    for post in reddit_posts[:10]:
+        inputs = tokenizer(post, return_tensors="pt", truncation=True, padding=True)
+        outputs = model(**inputs)
+        predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
+        sentiments.append(predicted_class)  
+    
+    all_social_media_data = [sentiments, len(reddit_posts)]
+    return all_social_media_data
 
-# Perform sentiment analysis on a subset of 10 Reddit posts using BERT
-sentiments = []
-for post in reddit_posts[:10]:
-    inputs = tokenizer(post, return_tensors="pt", truncation=True, padding=True)
-    outputs = model(**inputs)
-    predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
-    sentiments.append(predicted_class)  
-
-all_social_media_data = [sentiments, len(reddit_posts)]
+# Now you can call analyze_social_media_data with a company_name argument
+# in the other file to get the all_social_media_data.
