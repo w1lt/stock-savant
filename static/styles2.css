@@ -10,13 +10,14 @@
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 400;
   font-size: 22px;
   background-color: rgba(0, 0, 0, 0.9);
   color: rgba(255, 255, 255, 0.771);
-  margin: 0; 
-  overflow: hidden; 
+  margin: 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +103,7 @@ h1 {
 .maintext {
   background-color: rgba(118, 105, 105, 0.178);
   padding-bottom: 50px;
-  margin: 0 auto; 
+  margin: 0 auto;
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.102);
@@ -112,14 +113,14 @@ h1 {
 }
 
 .maintext > * {
-  padding: 2%; 
+  padding: 2%;
 }
 
 .maintext img {
   object-fit: cover;
   max-width: 70%;
   max-height: 100%;
-  border-radius: 50%; 
+  border-radius: 50%;
   transition: 0.5s ease-out;
   padding-bottom: 10px;
 }
@@ -144,9 +145,9 @@ h1 {
   font-weight: 600;
   line-height: 20px;
   padding: 6px 16px;
-  text-align: left; 
+  text-align: left;
   vertical-align: middle;
-  width: 200px; 
+  width: 200px;
 }
 
 #ticker:focus {
@@ -155,12 +156,12 @@ h1 {
 }
 
 #ticker::placeholder {
-  color: rgba(0, 0, 0, 0.281); 
+  color: rgba(0, 0, 0, 0.281);
 }
 
 #sub-header {
   color: rgba(255, 255, 255, 0.581);
-  text-align: center; 
+  text-align: center;
   font-size: small;
   margin: 0;
   padding: 0;
