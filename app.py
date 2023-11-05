@@ -42,27 +42,19 @@ def index():
 
         # Final prediction of month 12
         if prediction_modifier > 4:
-            prediction = initial_prediction + ((prediction_modifier * 25)*initial_prediction)
+            prediction = initial_prediction + ((prediction_modifier * .1)*initial_prediction)
         elif prediction_modifier > 3:
-            prediction = initial_prediction + ((prediction_modifier * .2)*initial_prediction)
+            prediction = initial_prediction + ((prediction_modifier * .05)*initial_prediction)
         elif prediction_modifier > 2.5:
-            prediction = initial_prediction + ((prediction_modifier * .12)*initial_prediction)
+            prediction = initial_prediction + ((prediction_modifier * .01)*initial_prediction)
         elif prediction_modifier > 2:
-            prediction = initial_prediction - ((prediction_modifier * .12)*initial_prediction)
+            prediction = initial_prediction - ((prediction_modifier * .01)*initial_prediction)
         elif prediction_modifier > 1:
-            prediction = initial_prediction - ((prediction_modifier * .2)*initial_prediction)
+            prediction = initial_prediction - ((prediction_modifier * .05)*initial_prediction)
         elif prediction_modifier > 0:
-            prediction = initial_prediction - ((prediction_modifier * .25)*initial_prediction)
+            prediction = initial_prediction - ((prediction_modifier * .1)*initial_prediction)
 
-        # msc_results = msc.predict_earnings(stock_change_mean = monthly_avg_change,
-        #                                     stock_change_std = monthly_stdev,
-        #                                     news_sentiment_mean = news_sentiment,
-        #                                     news_sentiment_std = news_stdev,
-        #                                     social_sentiment_mean = social_sentiment,
-        #                                     social_sentiment_std = social_stdev,
-        #                                     reddit_mentions_mean = social_reddit_post_mean,
-        #                                     )
-        # msc_results= (round(msc_results, 2))
+        prediction = round(prediction, 2)
 
         return render_template('result.html', stock_change_mean = monthly_avg_change,
                                             stock_change_std = monthly_stdev,

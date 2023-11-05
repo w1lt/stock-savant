@@ -10,7 +10,8 @@
 }
 
 body {
-  font-family: "Montserrat";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 400;
   font-size: 22px;
   background-color: rgba(0, 0, 0, 0.9);
@@ -114,19 +115,19 @@ h1 {
 }
 
 .maintext > * {
-  padding: 2%; /* Adjust the padding as needed */
+  padding: 0.1%; /* Adjust the padding as needed */
 }
 
 .maintext img {
   object-fit: cover;
-  max-width: 70%;
+  max-width: 45%;
   max-height: 100%;
   border-radius: 50%; /* Individual values for each corner */
   transition: 0.5s ease-out;
-  padding-bottom: 10px;
+  transform: scale(1.15);
 }
 .maintext img:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   box-shadow: #00000028 10px 10px 10px 0px;
   cursor: pointer;
 }

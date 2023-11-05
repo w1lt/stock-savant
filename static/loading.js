@@ -15,5 +15,5 @@ loadButton.addEventListener("click", () => {
     // Hide the loading screen and display the content
     loadingScreen.style.display = "none";
     content.style.display = "block";
-  }, 3000); // Change the timeout duration as needed
+  }, 10000); // Change the timeout duration as needed
 });
