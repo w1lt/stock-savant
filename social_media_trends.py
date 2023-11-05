@@ -20,7 +20,7 @@ subreddit_name = "StockMarket"
 def fetch_reddit_data(company_name, subreddit_name):
     subreddit = reddit.subreddit(subreddit_name)
     posts = []
-    for submission in subreddit.search(company_name, limit=20):  # 20 posts to fetch
+    for submission in subreddit.search(company_name, limit=10):  # 10 posts to fetch
         posts.append(submission.title + ' ' + submission.selftext)
     return posts
 
@@ -38,7 +38,7 @@ def analyze_social_media_data(company_name): #takes in string func pararmeter
     avg_sentiments = (sum(sentiments) / len(sentiments)) # Average sentiment score of Reddit posts
     sentiment_stdev = statistics.stdev(sentiments)  # Standard deviation of sentiments
     
-    avg_reddit_mentions = (len(reddit_posts) / 20)  # Average number of Reddit mentions
+    avg_reddit_mentions = (len(reddit_posts) / 10)  # Average number of Reddit mentions
 
     social_media_data = [avg_sentiments, sentiment_stdev, avg_reddit_mentions]
     return social_media_data
