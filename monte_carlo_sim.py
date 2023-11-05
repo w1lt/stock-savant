@@ -12,7 +12,6 @@ def predict_earnings(
     social_sentiment_mean,
     social_sentiment_std,
     reddit_mentions_mean,
-    reddit_mentions_std,
     n_simulations=20
 ):
     # Define hypothetical coefficients for the model. These are the weights we assign to each factor 
@@ -42,15 +41,12 @@ def predict_earnings(
         news_sentiment = bound_value(news_sentiment, 1, 5)
         social_sentiment = bound_value(social_sentiment, 1, 5)
         
-        # Randomly sample from a normal distribution for Reddit mentions.
-        reddit_mentions = np.random.normal(reddit_mentions_mean, reddit_mentions_std)
-
-        # Calculate predicted earnings based on the hypothetical model.
-        predicted_earnings = (beta1 * stock_change) + (beta2 * news_sentiment**3) + (beta3 * social_sentiment**2) + (beta4 * np.log(reddit_mentions + 1))
+        # Calculate predicted earnings based on the hypothetical model and include the reddit_mentions_mean.
+        predicted_earnings = (beta1 * stock_change) + (beta2 * news_sentiment**3) + (beta3 * social_sentiment**2) + (beta4 * np.log(reddit_mentions_mean + 1))
         
         # Append the result to our list.
         earnings_results.append(predicted_earnings)
     
-        average_earning_results = np.mean(earnings_results) # Calculate the average of all the results.
+    average_earning_results = np.mean(earnings_results) # Calculate the average of all the results.
 
     return average_earning_results
