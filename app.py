@@ -54,8 +54,9 @@ def index():
         elif prediction_modifier > 0:
             prediction = initial_prediction - ((prediction_modifier * .1)*initial_prediction)
 
-
-        return render_template('result.html', stock_change_mean = monthly_avg_change,
+        prediction = round(prediction, 2)
+        return render_template('result.html', ticker = ticker_symbol,
+                                            stock_change_mean = monthly_avg_change,
                                             stock_change_std = monthly_stdev,
                                             news_sentiment_mean = news_sentiment,
                                             news_sentiment_std = news_stdev,
