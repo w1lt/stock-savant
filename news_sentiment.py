@@ -43,11 +43,11 @@ def get_company_news_sentiment(company_name): # company_name is a string
     for article in news_articles:
         inputs = tokenizer(article, return_tensors="pt", truncation=True, padding=True)
         outputs = model(**inputs)
-        predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
+        predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5 with 1 being most negative and 5 being most positive
         sentiments.append(predicted_class)  
 
     if len(sentiments) == 0:
-        return None  # or handle it differently, like returning a message or raising an exception
+        return None 
     
     avg_news_sentiment = (sum(sentiments) / len(sentiments)) # Average sentiment score of news articles
     news_sentiment_stdev = statistics.stdev(sentiments)  # Standard deviation of sentiments

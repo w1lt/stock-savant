@@ -15,8 +15,8 @@ body {
   font-size: 22px;
   background-color: rgba(0, 0, 0, 0.9);
   color: rgba(255, 255, 255, 0.771);
-  margin: 0; /* Remove default margin */
-  overflow: hidden; /* Prevent scrollbars */
+  margin: 0; 
+  overflow: hidden; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,6 @@ h1 {
   padding: 0;
 }
 
-/* CSS */
 .button-3 {
   appearance: none;
   background-color: rgb(56, 158, 66);
@@ -103,7 +102,7 @@ h1 {
 .maintext {
   background-color: rgba(118, 105, 105, 0.178);
   padding-bottom: 50px;
-  margin: 0 auto; /* Center horizontally by setting margin to auto */
+  margin: 0 auto; 
   box-sizing: border-box;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.102);
@@ -113,14 +112,14 @@ h1 {
 }
 
 .maintext > * {
-  padding: 2%; /* Adjust the padding as needed */
+  padding: 2%; 
 }
 
 .maintext img {
   object-fit: cover;
   max-width: 70%;
   max-height: 100%;
-  border-radius: 50%; /* Individual values for each corner */
+  border-radius: 50%; 
   transition: 0.5s ease-out;
   padding-bottom: 10px;
 }
@@ -130,8 +129,6 @@ h1 {
   cursor: pointer;
 }
 
-/* ... existing CSS ... */
-
 #ticker {
   appearance: none;
   background-color: #ffffff;
@@ -140,16 +137,16 @@ h1 {
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
   color: #000000;
-  cursor: text; /* Change to text cursor for input */
+  cursor: text;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   padding: 6px 16px;
-  text-align: left; /* Change to left align for input */
+  text-align: left; 
   vertical-align: middle;
-  width: 200px; /* Set a width for the input */
+  width: 200px; 
 }
 
 #ticker:focus {
@@ -158,14 +155,12 @@ h1 {
 }
 
 #ticker::placeholder {
-  color: rgba(0, 0, 0, 0.281); /* Style placeholder text */
+  color: rgba(0, 0, 0, 0.281); 
 }
-
-/* ... remaining CSS ... */
 
 #sub-header {
   color: rgba(255, 255, 255, 0.581);
-  text-align: center; /* Center the text */
+  text-align: center; 
   font-size: small;
   margin: 0;
   padding: 0;

@@ -3,9 +3,6 @@ import calc_12_avg as calc
 import news_sentiment as news
 import social_media_trends as social
 
-
-import monte_carlo_sim as msc
-
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -40,7 +37,7 @@ def index():
         if prediction_modifier > 5: # error handling
             prediction_modifier = 5
 
-        # Final prediction of month 12
+        # Final prediction of month 12 (next month)
         if prediction_modifier > 4:
             prediction = initial_prediction + ((prediction_modifier * .1)*initial_prediction)
         elif prediction_modifier > 3:

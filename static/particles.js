@@ -70,7 +70,7 @@ function initParticles(lineColor) {
       },
     },
     interactivity: {
-      detect_on: "window", // Changed from "canvas" to "window"
+      detect_on: "window",
       events: {
         onhover: {
           enable: true,
