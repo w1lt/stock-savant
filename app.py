@@ -35,7 +35,7 @@ def index():
                                             social_sentiment_std = social_stdev,
                                             reddit_mentions_mean = social_reddit_post_mean,
                                             )
-        msc_results= (round(msc_results, 2))
+        msc_results = (round(msc_results, 2))
 
         return render_template('result.html', stock_change_mean = monthly_avg_change,
                                             stock_change_std = monthly_stdev,
