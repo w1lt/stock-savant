@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stock Price Predictor - Result</title>
-    <link rel="stylesheet" href="/static/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>"
+    />
+    <title>StockSavant</title>
+    <link rel="stylesheet" href="/static/styles2.css" />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -13,16 +17,29 @@
   </head>
   <body>
     <div id="particles-js"></div>
-    <div class="maintext">
-      <h1 style="font-size: xx-large">Stock Prediction for {{ ticker }}:</h1>
-      <p>Average Monthly Increase: ${{ averages }}</p>
-      <p>News Sentiment: {{ news_sentiment }}</p>
-      <p>Social Sentiment: {{ social_sentiment }}</p>
-      <a href="/"><button class="button-3" type="submit">Home</button></a>
+    <div class="css-blurry-gradient"></div>
+    <div class="css-blurry-gradient2"></div>
+    <header>
+      <div class="maintext">
+        <h1 style="font-size: xx-large">Stock Prediction for {{ ticker }}:</h1>
+        <p>Average Monthly Increase: ${{ averages }}</p>
+        <p>News Sentiment: {{ news_sentiment }}</p>
+        <p>Social Sentiment: {{ social_sentiment }}</p>
+        <a href="/"><button class="button-3" type="submit">Home</button></a>
       </div>
-
-      
-    </main>
+    </header>
+    <div id="sub-header">
+      <p>
+        ©
+        <a href="https://www.linkedin.com/in/joshualee128/" target="_blank"
+          >Joshua Lee</a
+        >
+        and
+        <a href="https://www.linkedin.com/in/willwhitehead122/" target="_blank"
+          >Will Whitehead</a
+        >
+      </p>
+    </div>
   </body>
   <script src="/static/particles.js"></script>
 </html>
