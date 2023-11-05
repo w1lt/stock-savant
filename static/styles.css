@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: sans-serif;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   margin: 0; /* Remove default margin */
@@ -23,6 +23,7 @@ body {
   animation: fadeInAnimation ease-in-out 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  flex-direction: column;
 }
 
 h1 {
@@ -83,7 +84,7 @@ h1 {
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
 
-.button-4:active {
+.button-4 {
   background-color: #6e8d77;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
@@ -97,9 +98,47 @@ h1 {
   }
 }
 
-header {
-  background-color: rgba(0, 0, 0, 0.3);
+.maintext {
+  background-color: rgba(255, 255, 255, 0.047);
   padding: 50px; /* Add some padding */
   box-sizing: border-box; /* Ensure padding doesn't increase div size */
   border-radius: 25px;
+}
+
+/* ... existing CSS ... */
+
+#ticker {
+  appearance: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: text; /* Change to text cursor for input */
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  text-align: left; /* Change to left align for input */
+  vertical-align: middle;
+  width: 200px; /* Set a width for the input */
+}
+
+#ticker:focus {
+  box-shadow: rgba(152, 159, 160, 0.4) 0 0 0 3px;
+  outline: none;
+}
+
+#ticker::placeholder {
+  color: rgba(0, 0, 0, 0.281); /* Style placeholder text */
+}
+
+/* ... remaining CSS ... */
+
+#sub-header {
+  color: rgba(255, 255, 255, 0.581);
+  text-align: center; /* Center the text */
 }

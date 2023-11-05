@@ -3,7 +3,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Stock Savant LLC</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>"
+    />
+    <title>StockSavant</title>
     <link rel="stylesheet" href="/static/styles.css" />
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link
@@ -15,12 +19,11 @@
     <div id="particles-js"></div>
     <header>
       <div class="maintext">
-        <h1>Stock Savant</h1>
+        <h1>STOCK SAVANT</h1>
         <p>Predict the future price of any stock using machine learning.</p>
         <form method="post">
-          <label for="ticker">Symbol:</label>
           <input
-            placeholder="ex. AAPL"
+            placeholder="AAPL, TSLA, etc."
             type="text"
             id="ticker"
             name="ticker"
@@ -30,6 +33,9 @@
         </form>
       </div>
     </header>
+    <div id="sub-header">
+      <p>© Joshua Lee and Will Whitehead</p>
+    </div>
   </body>
   <script src="/static/particles.js"></script>
 </html>
