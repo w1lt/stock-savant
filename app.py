@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import calc_12_avg as calc
 import news_sentiment as news
 import social_media_trends as social
-import llama as llm
+#import llama as llm
 
 app = Flask(__name__)
 
@@ -20,10 +20,10 @@ def index():
         social_sentiment = social_data[0]
         social_posts = social_data[1]
 
-        llm_response = llm.gen_output(ticker_symbol)
+        #llm_response = llm.gen_output(ticker_symbol)
     
 
-        return render_template('result.html', ticker=ticker_symbol, averages=monthly_averages, avg_number = monthly_averages_1_number, news_sentiment=news_sentiment, social_sentiment=social_sentiment, social_posts = social_posts, llm_response = llm_response)
+        return render_template('result.html', ticker=ticker_symbol, averages=monthly_averages, avg_number = monthly_averages_1_number, news_sentiment=news_sentiment, social_sentiment=social_sentiment, social_posts = social_posts)
     
     return render_template('index.html')
 
