@@ -5,21 +5,24 @@
   <head>
     <title>Stock Price Predictor</title>
     <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link
+      href="https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro"
       rel="stylesheet"
-      href="{{url_for('static',filename='dist/css/output.css')}}"
     />
   </head>
   <body>
+    <div id="particles-js"></div>
     <header>
       <div>
         <h1>Stock Price Predictor</h1>
         <form method="post">
-          <label for="ticker">Ticker:</label>
+          <label for="ticker">Symbol:</label>
           <input type="text" id="ticker" name="ticker" required />
-          <button type="submit">Submit</button>
+          <button class="button-3" type="submit">Submit</button>
         </form>
       </div>
     </header>
   </body>
+  <script src="/static/particles.js"></script>
 </html>

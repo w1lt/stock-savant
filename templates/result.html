@@ -5,8 +5,10 @@
   <head>
     <title>Stock Price Predictor - Result</title>
     <link rel="stylesheet" href="/static/styles.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body>
+    <div id="particles-js"></div>
     <header>
       <div>
         <h1>Stock Price Predictor - Result</h1>
@@ -30,6 +32,9 @@
           {% endfor %}
         </tbody>
       </table>
+      {{ script|safe }} {{ div|safe }}
+      <a href="/">go home</a>
     </main>
   </body>
+  <script src="/static/particles.js"></script>
 </html>
