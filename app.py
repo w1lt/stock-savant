@@ -14,7 +14,7 @@ def index():
 
         months_12 = calc.calc_12_avg(ticker_symbol)
         monthly_avg_change = months_12[0]
-        monthly_stdev = months_12[1] #takes in company stock name as string
+        monthly_stdev = months_12[1] 
 
         news_data = news.get_company_news_sentiment(ticker_symbol) #takes in company stock name as string
         news_sentiment = news_data[0]
@@ -35,7 +35,7 @@ def index():
                                             social_sentiment_std = social_stdev,
                                             reddit_mentions_mean = social_reddit_post_mean,
                                             )
-        
+        msc_results= (round(msc_results, 2))
 
         return render_template('result.html', stock_change_mean = monthly_avg_change,
                                             stock_change_std = monthly_stdev,
