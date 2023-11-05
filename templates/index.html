@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-  pip freeze > requirements.txt
   <head>
     <title>Stock Savant LLC</title>
     <link rel="stylesheet" href="/static/styles.css" />
@@ -17,6 +16,10 @@
     <header>
       <div>
         <h1>Stock Price Predictor</h1>
+        <p>
+          Enter the company stock ticker<br />you would like to predict the
+          price of <br />for example, AAPL for Apple.
+        </p>
         <form method="post">
           <label for="ticker">Symbol:</label>
           <input type="text" id="ticker" name="ticker" required />

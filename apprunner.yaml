@@ -8,4 +8,4 @@ build:
       - pip install pipenv
       - pipenv install
 run:
-  command: pytho3 app.py
+  command: python3 app.py
