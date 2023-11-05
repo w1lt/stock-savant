@@ -22,9 +22,10 @@
     <header>
       <div class="maintext">
         <h1 style="font-size: xx-large">Stock Prediction for {{ ticker }}:</h1>
-        <p>Average Monthly Increase: ${{ averages }}</p>
-        <p>News Sentiment: {{ news_sentiment }}</p>
-        <p>Social Sentiment: {{ social_sentiment }}</p>
+        <p>Average Monthly Increase: ${{ stock_change_mean }}</p>
+        <p>News Sentiment: {{ news_sentiment_mean }}/5</p>
+        <p>Social Sentiment: {{ social_sentiment_mean }}/5</p>
+        <p>Total Score: {{ msc_results }}/5</p>
         <a href="/"><button class="button-3" type="submit">Home</button></a>
       </div>
     </header>

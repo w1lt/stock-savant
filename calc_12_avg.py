@@ -1,5 +1,6 @@
 import pandas as pd
 import yfinance as yf
+import statistics
 
 def calc_12_avg(ticker_symbol):
     # Define the date range for the past 12 months
@@ -17,6 +18,8 @@ def calc_12_avg(ticker_symbol):
     monthly_changes = monthly_averages.diff().dropna()
 
     # Calculate the average monthly increase
-    avg_monthly_increase = monthly_changes.mean()
-    avg_monthly_increase = str(round(avg_monthly_increase, 2))
-    return [avg_monthly_increase, last_11_month_avg_prices]
+    avg_monthly_change = monthly_changes.mean()
+    avg_monthly_change = str(round(avg_monthly_change, 2))
+
+    monthly_stdev = statistics.stdev(last_11_month_avg_prices)  # Standard deviation of sentiments
+    return [avg_monthly_change, monthly_stdev]
