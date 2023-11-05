@@ -148,3 +148,7 @@ h1 {
   margin: 0;
   padding: 0;
 }
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
