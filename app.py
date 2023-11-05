@@ -25,7 +25,6 @@ def index():
         social_stdev = social_data[1]
 
         social_reddit_post_mean = social_data[2]
-        social_reddit_post_stdev = social_data[3]
 
 
         msc_results = msc.predict_earnings(stock_change_mean = monthly_avg_change,
@@ -35,7 +34,7 @@ def index():
                                             social_sentiment_mean = social_sentiment,
                                             social_sentiment_std = social_stdev,
                                             reddit_mentions_mean = social_reddit_post_mean,
-                                            reddit_mentions_std = social_reddit_post_stdev,)
+                                            )
         
 
         return render_template('result.html', stock_change_mean = monthly_avg_change,
@@ -45,7 +44,6 @@ def index():
                                             social_sentiment_mean = social_sentiment,
                                             social_sentiment_std = social_stdev,
                                             reddit_mentions_mean = social_reddit_post_mean,
-                                            reddit_mentions_std = social_reddit_post_stdev,
                                             msc_results = msc_results,)
     
     return render_template('index.html')

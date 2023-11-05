@@ -50,7 +50,7 @@ def get_company_news_sentiment(company_name): # company_name is a string
         return None  # or handle it differently, like returning a message or raising an exception
     
     avg_news_sentiment = (sum(sentiments) / len(sentiments)) # Average sentiment score of news articles
-    news_sentiment_stdev = statistics.stdev(avg_news_sentiment)  # Standard deviation of sentiments
+    news_sentiment_stdev = statistics.stdev(sentiments)  # Standard deviation of sentiments
 
     news_sentiment_data = [avg_news_sentiment, news_sentiment_stdev]
     return news_sentiment_data

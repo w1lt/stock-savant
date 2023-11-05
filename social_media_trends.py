@@ -39,7 +39,6 @@ def analyze_social_media_data(company_name): #takes in string func pararmeter
     sentiment_stdev = statistics.stdev(sentiments)  # Standard deviation of sentiments
     
     avg_reddit_mentions = (len(reddit_posts) / 10)  # Average number of Reddit mentions
-    reddit_mentions_stdev = statistics.stdev(avg_reddit_mentions)  # Standard deviation of Reddit mentions
 
-    social_media_data = [avg_sentiments, sentiment_stdev, avg_reddit_mentions, reddit_mentions_stdev]
+    social_media_data = [avg_sentiments, sentiment_stdev, avg_reddit_mentions]
     return social_media_data
