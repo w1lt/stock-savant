@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 import yfinance as yf
 import pandas as pd
 import calc_12_avg as calc

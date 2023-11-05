@@ -3,3 +3,4 @@ flask==2.2.2
 yfinance==0.2.31
 pandas==2.0.3
 bokeh==2.4.1
+requests==2.31.0
