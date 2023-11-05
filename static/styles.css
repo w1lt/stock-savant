@@ -92,7 +92,9 @@ h1 {
   }
 }
 
-#maintext {
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 1);
+header {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 50px; /* Add some padding */
+  box-sizing: border-box; /* Ensure padding doesn't increase div size */
+  border-radius: 25px;
 }
