@@ -1,5 +1,5 @@
 ## Check out our live demo!
-[Youtube Link](https://youtu.be/1jyvZtISRoM)
+[Youtube Link](https://youtu.be/1jyvZtISRoM) [Devpost](https://devpost.com/software/stock-savant)
 
 ## Inspiration
 We were thinking of a way to incorporate our skills in python and data science to create an awesome application that would be fun in addition to serving a practical use. We decided to create Stock Savant, which is a culmination of our skills we have learned this far.
