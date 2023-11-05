@@ -34,6 +34,7 @@ def analyze_social_media_data(company_name): #takes in string func pararmeter
         predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
         sentiments.append(predicted_class)  
     
+    sentiments = (sum(sentiments) / len(sentiments)) # Average sentiment score of Reddit posts
     all_social_media_data = [sentiments, len(reddit_posts)]
     return all_social_media_data
 
