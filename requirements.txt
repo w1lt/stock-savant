@@ -2,11 +2,10 @@ werkzeug==2.2.2
 flask==2.2.2
 yfinance==0.2.31
 pandas==2.0.3
-bokeh==2.4.1
 requests==2.31.0
 urllib3==1.26.6
 torch==2.1.0
 transformers==4.35.0
 praw=7.7.1
 sentencepiece==0.1.99
-accelrate==0.24.1
+accelerate==0.24.1
