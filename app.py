@@ -4,7 +4,7 @@ import news_sentiment as news
 import social_media_trends as social
 from subprocess import Popen, PIPE
 
-program_path = "/"
+program_path = "./alpaca.cpp/chat"
 
 app = Flask(__name__)
 
