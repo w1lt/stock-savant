@@ -10,7 +10,8 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "IBM Plex Sans Condensed";
+  font-size: 22px;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   margin: 0; /* Remove default margin */
