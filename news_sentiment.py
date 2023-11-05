@@ -41,17 +41,14 @@ news_articles = fetch_news_data(company_name)
 
 # Perform sentiment analysis on news articles using BERT
 sentiments = []
-logits_list = []
 for article in news_articles:
     inputs = tokenizer(article, return_tensors="pt", truncation=True, padding=True)
     outputs = model(**inputs)
-    logits = outputs.logits
-    predicted_class = torch.argmax(logits, dim=1).item() + 1  # sentiment score from 1 to 5
+    predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
     sentiments.append(predicted_class)  
-    logits_list.append(logits.tolist())
 
 # Create a DataFrame to store sentiment data
-data = {"News Article": news_articles, "Sentiment": sentiments, "Logits": logits_list}
+data = {"News Article": news_articles, "Sentiment": sentiments}
 df = pd.DataFrame(data)
 
 # Save the sentiment data to a CSV file
