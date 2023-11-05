@@ -1,5 +1,4 @@
 import requests
-import pandas as pd
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
@@ -10,9 +9,7 @@ model = BertForSequenceClassification.from_pretrained(model_name)
 
 # Define the API endpoint to fetch news data
 news_api_endpoint = "https://newsapi.org/v2/everything"
-company_name = "AAPL"
 
-# Fetch news data from News API
 def fetch_news_data(company_name):
     params = {
         "q": company_name,
@@ -37,21 +34,20 @@ def fetch_news_data(company_name):
 
     return [article["description"] for article in news_data["articles"]]
 
-news_articles = fetch_news_data(company_name)
+def get_company_news_sentiment(company_name): # company_name is a string
+    news_articles = fetch_news_data(company_name)
 
-# Perform sentiment analysis on news articles using BERT
-sentiments = []
-for article in news_articles:
-    inputs = tokenizer(article, return_tensors="pt", truncation=True, padding=True)
-    outputs = model(**inputs)
-    predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
-    sentiments.append(predicted_class)  
+    # Perform sentiment analysis on news articles using BERT
+    sentiments = []
+    for article in news_articles:
+        inputs = tokenizer(article, return_tensors="pt", truncation=True, padding=True)
+        outputs = model(**inputs)
+        predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
+        sentiments.append(predicted_class)  
 
-# Create a DataFrame to store sentiment data
-data = {"News Article": news_articles, "Sentiment": sentiments}
-df = pd.DataFrame(data)
+    if len(sentiments) == 0:
+        return None  # or handle it differently, like returning a message or raising an exception
+    
+    news_sentiment_data = (sum(sentiments) / len(sentiments)) # Average sentiment score of news articles
 
-# Save the sentiment data to a CSV file
-df.to_csv("news_sentiment_data.csv", index=False)
-
-print("Sentiment analysis completed. Data saved to news_sentiment_data.csv.")
+    return news_sentiment_data
