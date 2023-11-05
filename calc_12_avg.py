@@ -22,4 +22,9 @@ def calc_12_avg(ticker_symbol):
     avg_monthly_change = int(round(avg_monthly_change, 2))
 
     monthly_stdev = statistics.stdev(last_11_month_avg_prices)  # Standard deviation of sentiments
-    return [avg_monthly_change, monthly_stdev]
+
+    #find b value of y=mx+b for month 11
+    average_slope = avg_monthly_change/11
+    b = monthly_averages[10] - (average_slope*11) # y(of 11th month) - average_slope*x(of 11th month)
+
+    return [avg_monthly_change, monthly_stdev, average_slope, b]
