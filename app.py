@@ -18,11 +18,7 @@ def index():
         except:
             return render_template('index.html', error=True)
 
-        stock_plot = stock_graph.generate_graph(ticker_symbol)
-        script, div = components(stock_plot)
-        print("please work!")
-
-        return render_template('result.html', ticker=ticker_symbol, averages=monthly_averages, script=script, div=div)
+        return render_template('result.html', ticker=ticker_symbol, averages=monthly_averages)
     
     return render_template('index.html')
 
