@@ -1,26 +1,17 @@
 ## Inspiration
-When we were thinking about the theme of accessibility, our minds immediately went towards those with disabilities who don’t have the ability to enjoy many of the things everyone else can. So, we began to brainstorm where we could help make a difference, and we landed on gaming. You see, the problem is, as the gaming industry grew, the concern about accessibility also grew. 
-In our project, we want to increase the accessibility of video games to these individuals one game at a time. As the first game our team works on, we chose to work on a new version of  one of the first massively popular arcade games to exist, we chose this game because, as it helped mark the beginning of the future booming video game industry, we hope our software will help mark the beginning of a bolstered effort to increase the accessibility in video games. 
-
-
+We were thinking of a way to incorporate our skills in python and data science to create an awesome application that would be fun in addition to serving a practical use. We decided to create Stock Savant, which is a culmination of our skills we have learned this far.
 ## What it does
-We created a game based on the beloved hit classic, pong, that delivers the joys of gaming while increasing the accessibility of gaming. In order to do this, we integrated eye tracking and voice commands using Python to begin lowering the barriers to playing video games. Even if our player cannot use both arms or hands, they will still be passionately served an entertaining time playing Pupil Pong.
-
+Our application allows the user to input a stock ticker, and in return they receive a recommendation on whether it would be a good buy based on different indicators that we believe tell the whole story of a stock
 ## How we built it
-Within Pupil Pong, we utilize Eye Tracking to detect the movements of the pupil in relation to the eye. Using the horizontal and vertical ratios between the pupil and the edges of the eyeball, our game can detect which direction the player wants to move their right paddle and move it in that direction without needing to physically interact with a device at all.
-During the initial menu of our game, we utilize voice commands that allow the user to easily choose between three options: play game, which starts the game; about, which displays the creators and teaches the player how to play the game; and quit, which exits the program entirely.
-Our game is made using Python and is Object-Oriented. We implemented our pong like game using the Python game engine Pygame.
-
-
+For the backend, we used the Python libraries yFinance, Pytorch, flask, and pandas, numpy, NewsAPI, Reddit API. For the frontend, we used vanilla html, css, and javascript (boring!)
 ## Challenges we ran into
-We ran into plenty of challenges throughout the event, particularly getting the voice commands in the menu to work. This was especially challenging because none of our group-mates had experience using PyGame, or any game engines similar
-
+It took us a while to land on a solid stock market library to be able to access past stock performance, in addition to wasting countless hours of trying to run an open source large language model.
 ## Accomplishments that we're proud of
-We are proud that we were able to successfully implement eye tracking into the classic game,  in addition to the voice commands for navigating the menu. We are really happy with the way our project turned out, especially because we were able to create a working app in such a short period of time.
-
+Creating our first backend system for a website and creating our first project that utilizes machine learning. Making algorithms that predict the future is always a heavy task, but we believe it payed off, as the final product is something we are proud of.
 ## What we learned
-All of us learned how to combine multiple different libraries together to create a seamless experience. In addition, we got more comfortable using Github for version control and collaboration, which made sharing our code much easier and quicker. Last but not least, we gained more experience using pip and homebrew to install new libraries on our computers.
+We learned tons about machine learning, flask, web development, and quantitative finance. We learned that a big part of hackathons is being able to work well with your teammates, because we all know once it gets late enough, things can start to get out of hand.
+## What's next for Stock Savant
+We are hoping to deploy the app online so anyone can use it for any device. This will hopefully be done by the end of the hackathon. We also want to add more datapoints for a more accurate prediction of the stock.
 
-## What's next for Pupil Pong
-Looking to the future, we hope to increase the fluidity of our game and also increase the accommodations for other types of disabilities. Also, given more time, we would love to work on more games. Looking at the big picture, we hope this can inspire more small game developers to increase the accessibility of their games, so that more of our audience can enjoy a larger selection of games that can accommodate them. 
-Overall, to bring disabled individuals to the edge of their seat, the game Pupil Pong cannot be beat! To bring players to the game-point of glee no matter their circumstance, Pupil Pong will give you control of the ball with just a glance!
+We wanted to thank Goldman Sachs for the opportunity to create such a cool project, and HackUTD for putting everything together!
+
