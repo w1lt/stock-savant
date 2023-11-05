@@ -113,10 +113,6 @@ h1 {
   transition: box-shadow 0.5s;
 }
 
-.maintext:hover {
-  box-shadow: 5px 5px rgba(255, 255, 255, 0.5);
-}
-
 .maintext > * {
   padding: 2%; /* Adjust the padding as needed */
 }
