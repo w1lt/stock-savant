@@ -8,6 +8,7 @@ def calc_12_avg(ticker_symbol):
 
     # Fetch the historical data
     data = yf.download(ticker_symbol, start=start_date, end=end_date)
+    company_name = ticker_symbol.info['longName']
 
     # Calculate the monthly averages
     monthly_averages = data['Adj Close'].resample('M').mean()
@@ -18,4 +19,5 @@ def calc_12_avg(ticker_symbol):
     # Calculate the average monthly increase
     avg_monthly_increase = monthly_changes.mean()
     avg_monthly_increase = str(round(avg_monthly_increase, 2))
+    avg_monthly_increase = [avg_monthly_increase, company_name]
     return avg_monthly_increase

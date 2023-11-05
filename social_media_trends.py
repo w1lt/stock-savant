@@ -19,7 +19,7 @@ subreddit_name = "StockMarket"
 def fetch_reddit_data(company_name, subreddit_name):
     subreddit = reddit.subreddit(subreddit_name)
     posts = []
-    for submission in subreddit.search(company_name, limit=1000):  # Adjust the number of posts as needed
+    for submission in subreddit.search(company_name, limit=10):  # Adjust the number of posts as needed
         posts.append(submission.title + ' ' + submission.selftext)
     return posts
 
