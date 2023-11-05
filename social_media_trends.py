@@ -23,7 +23,7 @@ def fetch_reddit_data(company_name, subreddit_name):
         posts.append(submission.title + ' ' + submission.selftext)
     return posts
 
-def analyze_social_media_data(company_name):
+def analyze_social_media_data(company_name): #takes in string func pararmeter
     reddit_posts = fetch_reddit_data(company_name, subreddit_name)
     
     # Perform sentiment analysis on a subset of 10 Reddit posts using BERT
