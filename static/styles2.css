@@ -36,7 +36,7 @@ h1 {
 /* CSS */
 .button-3 {
   appearance: none;
-  background-color: #2ea44f;
+  background-color: rgb(56, 158, 66);
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
@@ -66,7 +66,7 @@ h1 {
 }
 
 .button-3:hover {
-  background-color: #2c974b;
+  background-color: rgb(47, 137, 56);
 }
 
 .button-3:focus {
@@ -226,5 +226,5 @@ button:hover {
 }
 
 button {
-  transition: transform 0.5s;
+  transition: transform 0.2s, background-color 0.3s;
 }

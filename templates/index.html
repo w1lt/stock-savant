@@ -16,6 +16,7 @@
     />
   </head>
   <body>
+    <div class="loader" hidden></div>
     <div id="particles-js"></div>
     <div class="css-blurry-gradient"></div>
     <div class="css-blurry-gradient2"></div>
@@ -24,8 +25,7 @@
         <img src="/static/logos/5.png" alt="" />
         <!-- <h1 style="font-size: xx-large"><b>STOCK SAVANT</b></h1> -->
         <p>
-          Predict the performance of a stock using AI. Just enter a stock ticker
-          below.
+          AI powered stock performance predictor. Enter a ticker symbol below.
         </p>
         <form method="post">
           <input
@@ -35,7 +35,9 @@
             name="ticker"
             required
           />
-          <button class="button-3" type="submit">Predict ✨</button>
+          <button id="loadButton" class="button-3" type="submit">
+            Predict ✨
+          </button>
         </form>
       </div>
     </header>
@@ -51,6 +53,11 @@
         >
       </p>
     </div>
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loader"></div>
+      <p>Loading...</p>
+    </div>
   </body>
+  <script src="/static/loading.js"></script>
   <script src="/static/particles.js"></script>
 </html>
