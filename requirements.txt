@@ -1,4 +1,4 @@
 Flask==2.1.2
 yfinance==0.2.31
-pandas==2.1.2
+pandas==2.0.3
 bokeh==3.3.0

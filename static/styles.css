@@ -15,10 +15,19 @@ body {
   color: white;
   margin: 0; /* Remove default margin */
   overflow: hidden; /* Prevent scrollbars */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
   text-align: center;
   animation: fadeInAnimation ease-in-out 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 /* CSS */
@@ -81,4 +90,9 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+#maintext {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 1);
 }
