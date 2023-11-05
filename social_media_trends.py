@@ -1,6 +1,7 @@
 import praw
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
+import statistics  # Importing the statistics module for standard deviation
 
 # Define the BERT model and tokenizer for sentiment analysis
 model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
@@ -32,11 +33,10 @@ def analyze_social_media_data(company_name): #takes in string func pararmeter
         inputs = tokenizer(post, return_tensors="pt", truncation=True, padding=True)
         outputs = model(**inputs)
         predicted_class = torch.argmax(outputs.logits, dim=1).item() + 1  # sentiment score from 1 to 5
-        sentiments.append(predicted_class)  
+        sentiments.append(predicted_class)
     
-    sentiments = (sum(sentiments) / len(sentiments)) # Average sentiment score of Reddit posts
-    all_social_media_data = [sentiments, len(reddit_posts)]
-    return all_social_media_data
-
-# Now you can call analyze_social_media_data with a company_name argument
-# in the other file to get the all_social_media_data.
+    avg_sentiments = (sum(sentiments) / len(sentiments)) # Average sentiment score of Reddit posts
+    sentiment_stdev = statistics.stdev(sentiments)  # Standard deviation of sentiments
+    
+    social_media_data = [avg_sentiments, sentiment_stdev, len(reddit_posts)]
+    return social_media_data

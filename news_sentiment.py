@@ -1,6 +1,7 @@
 import requests
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
+import statistics  # Importing the statistics module for standard deviation
 
 # Define the BERT model and tokenizer for sentiment analysis
 model_name = "nlptown/bert-base-multilingual-uncased-sentiment"
@@ -48,6 +49,8 @@ def get_company_news_sentiment(company_name): # company_name is a string
     if len(sentiments) == 0:
         return None  # or handle it differently, like returning a message or raising an exception
     
-    news_sentiment_data = (sum(sentiments) / len(sentiments)) # Average sentiment score of news articles
+    avg_news_sentiment = (sum(sentiments) / len(sentiments)) # Average sentiment score of news articles
+    news_sentiment_stdev = statistics.stdev(avg_news_sentiment)  # Standard deviation of sentiments
 
+    news_sentiment_data = [avg_news_sentiment, news_sentiment_stdev]
     return news_sentiment_data
