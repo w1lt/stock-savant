@@ -38,5 +38,5 @@ def generate_graph(ticker):
 
     # Remove the x-axis major label ticks
     p.xaxis.major_label_overrides = {}
-
+    print("about to print!")
     return p  # Return the Bokeh plot object

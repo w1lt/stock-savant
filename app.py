@@ -20,16 +20,11 @@ def index():
 
         stock_plot = stock_graph.generate_graph(ticker_symbol)
         script, div = components(stock_plot)
+        print("please work!")
 
         return render_template('result.html', ticker=ticker_symbol, averages=monthly_averages, script=script, div=div)
     
     return render_template('index.html')
-
-@app.route('/graph/<ticker>', methods=['GET'])
-def show_graph(ticker):
-    stock_plot = stock_graph.generate_graph(ticker)
-    script, div = components(stock_plot)
-    return render_template('graph.html', script=script, div=div)
 
 if __name__ == '__main__':
     app.run(debug=True)
