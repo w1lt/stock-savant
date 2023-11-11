@@ -9,11 +9,6 @@ tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForSequenceClassification.from_pretrained(model_name)
 
 # Reddit API credentials
-reddit = praw.Reddit(
-    client_id='clmYHjiEpgwCgVl40pn76Q',
-    client_secret='n16VUaqBn0C6mivikDWiupZcULpaYw',
-    user_agent='python:StockSavant:v1.0 (by /u/Aggravating-Gas-5659)'
-)
 
 subreddit_name = "StockMarket"
 

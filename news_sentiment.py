@@ -16,9 +16,6 @@ def fetch_news_data(company_name):
         "q": company_name,
         "pageSize": 10,  # Max number of articles to retrieve
     }
-    headers = {
-        "x-api-key": "47d31e1d0e564f16815644e77a24f5d3"  # API key 
-    }
     response = requests.get(news_api_endpoint, params=params, headers=headers)
     
     # Check if the response is successful (HTTP Status Code 200)
